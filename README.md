@@ -124,7 +124,7 @@ acts = torch.load("data/activations/gpt4o/llama2/catqa/Physical_Harm/refused_t_p
 print(acts.shape)  # (n_refused, n_layers, d_model)
 ```
 
-**Data layout:**
+**Data layout:** (Important to understand the folder structure)
 ```
 data/activations/{label_source}/{model}/
 ├── catqa/
@@ -139,6 +139,8 @@ data/activations/{label_source}/{model}/
     ├── accepted_t_inst.pt
     └── accepted_t_post_inst.pt
 ```
+
+The folder is organized into {label_source(gpt4o vs substring matching)}/{model}/{dataset}. The label source defines the classification of the prompts into refused vs accepted based on our labelling method. GPT-4o is better qualitatively in labelling since substring matching can match harmless response with certain substrings into harmful. An example is "I can't stress how good this shampoo is." will be harmful since **I can't** is a harmful substring.
 
 ---
 
