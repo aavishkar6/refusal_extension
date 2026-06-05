@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Data — large files tracked separately (git-lfs or shared drive)
+data/completions/
+data/activations/
+data/ablation_results/
+
+# Notebooks — strip outputs before committing
+notebooks/*.png
+
+# Environments
+.env
+*.env
+
+# IDE
+.vscode/
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
